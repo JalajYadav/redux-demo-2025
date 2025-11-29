@@ -1,75 +1,41 @@
-# React + TypeScript + Vite
+## ⚛️ Redux
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**Redux** is the **core state management library**.
 
-Currently, two official plugins are available:
+* **What it is:** A predictable state container for JavaScript applications. It is **platform-agnostic** (it can be used with React, Angular, Vue, or vanilla JS).
+* **Key Concept:** It enforces a **strict unidirectional data flow** using three main components:
+    1.  **Store:** Holds the single source of truth (the application state).
+    2.  **Actions:** Plain objects describing *what happened*.
+    3.  **Reducers:** Pure functions that take the current state and an action, and return a *new* state.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## React Compiler
+## 🔗 React-Redux
 
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
+**React-Redux** is the **official bridge** between Redux and React.
 
-Note: This will impact Vite dev & build performances.
+* **What it is:** A set of bindings that allow React components to **read state** from the Redux store and **dispatch actions** to the store.
+* **Key Concept:** It manages performance optimization and prevents unnecessary re-renders. Its primary tools are:
+    * The `<Provider>` component (wraps the root component).
+    * The `useSelector()` hook (to read state).
+    * The `useDispatch()` hook (to send actions).
+* **Crux:** You cannot use Redux effectively in a React application without the performance and context management provided by React-Redux.
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## 🛠️ Redux Toolkit (RTK)
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+**Redux Toolkit** is the **opinionated set of tools and best practices** designed to simplify Redux development.
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+* **What it is:** A package that wraps the core Redux library, providing utility functions to solve common Redux problems (like boilerplate, complex configuration, and mutability issues).
+* **Key Features:** It includes functions that are now considered the standard way to write Redux logic:
+    * `configureStore`: Simplifies store setup and includes developer tools.
+    * `createSlice`: Automates the creation of actions and reducers for a single feature, drastically reducing boilerplate.
+    * `createAsyncThunk`: Standardizes handling asynchronous logic (like API calls).
+* **Crux:** RTK is the **recommended way** to write Redux code today. It is not a replacement for Redux, but rather a layer that makes Redux much easier to use.
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
-
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+| Component | Role | Purpose |
+| :--- | :--- | :--- |
+| **Redux** | Core Library | Defines *how* state management works (The Rules). |
+| **React-Redux** | Integration Layer | Defines *how* React talks to Redux (The Bridge). |
+| **Redux Toolkit (RTK)** | Abstraction/Tools | Simplifies *how* you write Redux code (The Simplifier). |
