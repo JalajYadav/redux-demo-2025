@@ -46,3 +46,7 @@
   Answer: https://redux.js.org/usage/configuring-your-store/#problems-with-this-approach <br>
   In Short: Previously adding middleWares required a lot of Templating Jargon... like composing middlewares, enhancers and all
 
+* Q.2 Earlier in redux we were not allowed to do state mutatoin in reducers? What Now? <br>
+  In Short: Now we are allowed to do mutations as Redux Toolkit's createReducer and createSlice automatically use Immer internally to let you write simpler immutable update logic using "mutating" syntax. This helps simplify most reducer implementations.
+  Details: https://redux-toolkit.js.org/usage/immer-reducers
+
