@@ -39,3 +39,10 @@
 | **Redux** | Core Library | Defines *how* state management works (The Rules). |
 | **React-Redux** | Integration Layer | Defines *how* React talks to Redux (The Bridge). |
 | **Redux Toolkit (RTK)** | Abstraction/Tools | Simplifies *how* you write Redux code (The Simplifier). |
+
+
+## Questions
+* Q.1 We recommend using the configureStore method of the @reduxjs/toolkit package, which replaces createStore. WHY ?? <br>
+  Answer: https://redux.js.org/usage/configuring-your-store/#problems-with-this-approach <br>
+  In Short: Previously adding middleWares required a lot of Templating Jargon... like composing middlewares, enhancers and all
+
