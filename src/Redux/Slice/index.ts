@@ -1,2 +1,2 @@
 export * from './UsersSlice'
-export * from './PostsReducer'
+export * from './PostsSlice'
