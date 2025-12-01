@@ -1,10 +1,32 @@
 #root {
-  max-width: 1280px;
+  width: 1280px;
   margin: 0 auto;
   padding: 2rem;
-  text-align: center;
 }
 
 .card {
   padding: 2em;
+}
+
+.colorFg0 {
+  color: #fbf1c7;
+}
+
+.colorOrange {
+  color: #d65d0e;
+}
+
+.bgGf2 {
+  background-color: #d5c4a1;
+}
+.bgAqua {
+  background-color: #689d6a;
+}
+
+.bg1 {
+  background-color: #3c3836;
+}
+
+.border-fb4934 {
+  border-color: #fb4934;
 }

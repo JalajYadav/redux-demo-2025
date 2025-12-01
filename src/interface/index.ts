@@ -1,4 +1,4 @@
-export interface User {
+export interface USER {
     id: string,
     userId: string,
     firstName: string,
@@ -11,4 +11,9 @@ export interface POST {
     content: string,
     postedBy: string,
     likes: number,
+}
+
+export interface ReduxState {
+    posts: POST[],
+    users: USER[]
 }

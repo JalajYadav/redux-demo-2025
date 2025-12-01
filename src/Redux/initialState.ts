@@ -1,11 +1,11 @@
-import type { POST, User } from "../interface"
+import type { POST, USER } from "../interface"
 
-export const usersInitialState: User[] = [{
+export const usersInitialState: USER[] = [{
     id: 'abcd-efgh-ijkl-890734912',
     userId: 'agnostic12',
     firstName: 'John',
     lastName: 'Connor',
-    description: 'This is the Admin User'
+    description: 'This is the Admin USER'
 }]
 
 export const postsInitialState: POST[] = [{

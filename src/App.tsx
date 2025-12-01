@@ -1,22 +1,13 @@
-import { useState } from 'react'
-import './App.css'
+import { useSelector } from "react-redux";
+
+import "./App.css";
+import PostsPage from "./PostsPage";
+import type { ReduxState } from "./interface";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const posts = useSelector((state: ReduxState) => state.posts);
 
-  return (
-    <>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-    </>
-  )
+  return <PostsPage postsList={posts} />;
 }
 
-export default App
+export default App;
